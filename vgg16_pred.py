@@ -8,35 +8,35 @@ import sys
 import os
 
 
-#ŠK‘w‚ÌŠm”F
+#Check hierarchy
 os.getcwd()
 
 
-#ƒtƒ@ƒCƒ‹ƒpƒX‚Ìw’è
-#o—Í‚ªTrue‚É‚È‚ê‚ÎOK
+#Select filepath
+#OK if the output is True
 filename = "./Pictures/Camera Roll/***.jpg"
 print(os.path.exists(filename))
 
 
-# ŠwKÏ‚İ‚ÌVGG16‚ğƒ[ƒh
-# \‘¢‚Æ‚Æ‚à‚ÉŠwKÏ‚İ‚Ìd‚İ‚à“Ç‚İ‚Ü‚ê‚é
+# Load vgg16 weights
+# The learned weights and the structure are loaded together
 model = VGG16(weights='imagenet')
 # model.summary()
 
-# ˆø”‚Åw’è‚µ‚½‰æ‘œƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚Ş
-# ƒTƒCƒY‚ÍVGG16‚ÌƒfƒtƒHƒ‹ƒg‚Å‚ ‚é224x224‚ÉƒŠƒTƒCƒY‚³‚ê‚é
+# Read image
+# The size is resized to 224 x 224 which is the default of VGG 16
 img = image.load_img(filename, target_size=(224, 224))
 
-# “Ç‚İ‚ñ‚¾PILŒ`®‚Ì‰æ‘œ‚ğarray‚É•ÏŠ·
+# Convert PIL format image to array
 x = image.img_to_array(img)
 
-# 3ŸŒ³ƒeƒ“ƒ\ƒ‹irows, cols, channels) ‚ğ
-# 4ŸŒ³ƒeƒ“ƒ\ƒ‹ (samples, rows, cols, channels) ‚É•ÏŠ·
-# “ü—Í‰æ‘œ‚Í1–‡‚È‚Ì‚Åsamples=1‚Å‚æ‚¢
+# Convert 3D tensorï¼ˆrows, cols, channels) to
+# 4D tensor (samples, rows, cols, channels) 
+# samples = 1 
 x = np.expand_dims(x, axis=0)
 
-# Top-5‚ÌƒNƒ‰ƒX‚ğ—\‘ª‚·‚é
-# VGG16‚Ì1000ƒNƒ‰ƒX‚Ídecode_predictions()‚Å•¶š—ñ‚É•ÏŠ·‚³‚ê‚é
+# Predicting the Top-5 class
+# The 1000 class of VGG 16 is converted to a character string by decode_predictions ()
 preds = model.predict(preprocess_input(x))
 results = decode_predictions(preds, top=5)[0]
 for result in results:
