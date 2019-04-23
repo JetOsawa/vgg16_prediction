@@ -21,6 +21,12 @@ print(os.path.exists(filename))
 # Load vgg16 weights
 # The learned weights and the structure are loaded together
 model = VGG16(weights='imagenet')
+#model_filename = 'vgg16_weights.json'
+#weights_filename = 'vgg16_weights.hdf5'
+#json_string = open(model_filename).read()
+#model = model_from_json(json_string)
+#model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.001, beta_1=0.5), metrics=['accuracy'])
+#model.load_weights(weights_filename)
 # model.summary()
 
 # Read image
