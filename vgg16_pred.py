@@ -4,6 +4,7 @@
 from keras.applications.vgg16 import VGG16, preprocess_input, decode_predictions
 from keras.preprocessing import image
 from keras.models import model_from_json
+#from keras.optimizers import Adam
 import numpy as np
 import sys
 import os
