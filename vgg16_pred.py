@@ -3,6 +3,7 @@
 
 from keras.applications.vgg16 import VGG16, preprocess_input, decode_predictions
 from keras.preprocessing import image
+from keras.models import model_from_json
 import numpy as np
 import sys
 import os
@@ -21,11 +22,11 @@ print(os.path.exists(filename))
 # Load vgg16 weights
 # The learned weights and the structure are loaded together
 model = VGG16(weights='imagenet')
-#model_filename = 'vgg16_weights.json'
-#weights_filename = 'vgg16_weights.hdf5'
+#model_filename = 'vgg16_model.json'
+#weights_filename = 'vgg16_weights.h5'
 #json_string = open(model_filename).read()
 #model = model_from_json(json_string)
-#model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.001, beta_1=0.5), metrics=['accuracy'])
+##model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.001, beta_1=0.5), metrics=['accuracy'])
 #model.load_weights(weights_filename)
 # model.summary()
 
