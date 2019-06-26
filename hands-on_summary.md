@@ -20,15 +20,15 @@
 2、 ディープラーニング用フレームワーク「tensorflow」と「keras」をインストール
 
 スタート ➝ anaconda ➝ anaconda promptを立ち上げ、コマンドプロンプト上で、
-「conda create --name=tensorenv python=3.5」と入力して実行
-次に「conda activate tensorenv」と入力して実行
+「conda create --name=tensorenv python=3.5」と入力して実行。
+次に「conda activate tensorenv」と入力して実行。
 コマンド入力部の先頭に（tensorenv）と付加される。
-「python -V」と入力して、「python 3.5.6」と出力されればOK
+「python -V」と入力して、「python 3.5.6」と出力されればOK。
 
-次に
-「pip install --user tensorflow==1.14.0」と入力して実行することによりtensorflowをインストール
-「pip install keras」と入力して実行することによりtensorflowをインストール
-「pip install Pillow」と入力してImage変換ツールをインストール
+次に、
+「pip install --user tensorflow==1.14.0」と入力して実行することによりtensorflowをインストール。
+「pip install keras」と入力して実行することによりtensorflowをインストール。
+「pip install Pillow」と入力してImage変換ツールをインストール。
 により必要なツールのインストールは完了する。
 
 
@@ -40,7 +40,7 @@ windows：「cd  C:\Users\xxxx\Desktop」　xxxxはユーザー名
 Linux or Mac ：「cd  /home/xxxx/Desktop」
 
 「https://github.com/JetOsawa/vgg16_prediction」
-にアクセスして、「vgg16_prediction」フォルダをデスクトップ上にダウンロードする
+にアクセスして、「vgg16_prediction」フォルダをデスクトップ上にダウンロードする。
 
 
 -----------------------------------------------------------------------
